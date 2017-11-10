@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+}
+
+a {
+  margin: 5px;
+  color: black;
+}
+
+a.active {
+  color: red;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-icon {
+  animation: App-logo-spin infinite 20s linear;
+  height: 36px;
+}
