@@ -1,17 +1,19 @@
-import React from "react"
-import { Container } from "reactstrap"
+import React from "react";
+import { Container } from "reactstrap";
 
-import Content from "./Content"
+import Content from "./Content";
 
-import NavigationBar from "../organisms/NavigationBar"
-import Footer from "../organisms/Footer"
+import NavigationBar from "../organisms/NavigationBar";
+import Footer from "../organisms/Footer";
 
 const Layout = props => (
-  <Container>
+  <div>
     <NavigationBar />
-    <Content>{props.children}</Content>
+    <Container>
+      <Content>{props.children}</Content>
+    </Container>
     <Footer />
-  </Container>
-)
+  </div>
+);
 
-export default Layout
+export default Layout;
