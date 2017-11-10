@@ -1,12 +1,14 @@
 import React from "react"
 import {Button, Container, Row, Col } from 'reactstrap';
 
+// -----------------------------------------------------------------------------
+
 const styleFoot = {
   backgroundColor: "#1e88e5"
 }
 
 const styleFoot2 = {
-  marginTop: "20px",
+  margin: "20px",
   fontFamily: "lato",
   fontSize: "90%",
   color: "#616161",
@@ -22,9 +24,13 @@ const style = {
 const styleFootHead = {
   margin: "auto",
   fontFamily:"lato",
+  fontWeight: "bold",
   textAlign: "center",
+  borderBottom: "solid #1DE9B6 ",
   color: "#ffffff"
 }
+
+// -----------------------------------------------------------------------------
 
 const Footer = () => (
 <div>
@@ -34,24 +40,25 @@ const Footer = () => (
         <Row>
           <h3 style={styleFootHead}>EVENTHUNT</h3>
         </Row>
+        <row><br/></row>
         <br/>
         <Row>
           <Col>
-            <h4 >OUR STORY</h4>
+            <h5 >OUR STORY</h5>
             <p>
             Our Stories are collections of Snaps submitted from different Snapchatters throughout the community,
             collected and categorized to capture a place or event from different points-of-view
             </p>
           </Col>
           <Col>
-            <h4>OUR STORY</h4>
+            <h5>OUR STORY</h5>
             <p>Jogja Digital Valey</p>
             <p>Jl. Kartini No.7, Terban, Gondokusuman,</p>
             <p>Kota Yogyakarta,</p>
             <p> Daerah Istimewa Yogyakarta 55223</p>
           </Col>
           <Col>
-            <h4>OUR CONTACT</h4>
+            <h5>OUR CONTACT</h5>
             <Button color="warning">&#128222; (0274) 556565</Button>
             <br/>
             <br/>
@@ -63,12 +70,16 @@ const Footer = () => (
   </div>
   <div style={styleFoot2}>
     <Container>
-      <row>
-      Copyright &copy;2017. EventHunt Development Team.
-      </row>
-      <row>
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-      </row>
+      <Row >
+        <Col>Copyright &copy;2017. EventHunt Development Team.</Col>
+        <Col> </Col>
+        <Col sm="4">
+        <i>&copy;</i>
+        <i>&copy;</i>
+        <i>&copy;</i>
+        <i>&copy;</i>
+        </Col>
+      </Row>
     </Container>
   </div>
 </div>
