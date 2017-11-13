@@ -1,95 +1,141 @@
-import React from "react"
-import { Row, Col, Button, Form, FormGroup, Label, Input } from "reactstrap"
-import { Link } from "react-router-dom"
-import logo from '../static/logo.png';
+import React from "react";
+import {
+  Row,
+  Col,
+  Card,
+  CardBody,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input
+} from "reactstrap";
+import { Link } from "react-router-dom";
+import logo from "../static/logo.png";
 
+// STYLING_CSS -----------------------------------------------------------
 
-// LOGO
+const styleForm = {
+  width: "300px",
+  height: "350px"
+};
 
-const Logo = () => (
-  <h1>
-    <img src={logo} className="App-logo"  alt="LOGO" />
-  </h1>
-)
+const styleButton = {
+  width: "300px"
+};
 
-// TAGLINE
+const styleText = {
+  fontFamily: "lato",
+  fontSize: "16px",
+  margin: "0px"
+};
 
-const Tagline = () => <h2>Welcome on Muntada</h2>
+const styleHeader = {
+  fontFamily: "lato",
+  fontSize: "16px",
+  margin: "0px",
+  fontWeight: "bold",
+  borderBottom: "solid #1DE9B6 "
+};
 
 // COLUMN_SIGNUP
 
 const ColumnSignup = () => (
-  <Col xs={6}>
-    <h3>Sign Up</h3>
-    <Form>
-      <FormGroup>
-        <Label for="signupFullName">Full Name</Label>
-        <Input type="email" name="signupFullName" id="signupFullName" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="signupEmail">Email</Label>
-        <Input type="email" name="signupEmail" id="signupEmail" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="signupPassword">Password</Label>
-        <Input type="password" name="signupPassword" id="signupPassword" />
-      </FormGroup>
-      <Button color="success">Sign Up</Button>
-    </Form>
-  </Col>
-)
+  <Card style={styleText}>
+    <CardBody>
+      <h3 style={styleHeader}>REGISTER</h3>
+      <Form style={styleForm}>
+        <FormGroup>
+          <Label for="signupFullName" />
+          <Input
+            type="text"
+            name="signupFullName"
+            id="signupFullName"
+            placeholder="Full Name"
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="signupEmail" />
+          <Input
+            type="email"
+            name="signupEmail"
+            id="signupEmail"
+            placeholder="Email"
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="signupPassword" />
+          <Input
+            type="password"
+            name="signupPassword"
+            id="signupPassword"
+            placeholder="Password"
+          />
+        </FormGroup>
+        <Button style={styleButton} color="success">
+          REGISTER
+        </Button>
+      </Form>
+    </CardBody>
+  </Card>
+);
 
 // COLUMN_LOGIN
 
 const ColumnLogin = () => (
-  <Col xs={6}>
-    <h3>Login</h3>
-    <Form>
-      <FormGroup>
-        <Label for="loginEmail">Email</Label>
-        <Input type="email" name="loginEmail" id="loginEmail" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="loginPassword">Password</Label>
-        <Input type="password" name="loginPassword" id="loginPassword" />
-      </FormGroup>
-      <FormGroup>
-        <Link to="/forgot">Forgot password?</Link>
-      </FormGroup>
-      <Button color="danger">Login</Button>
-    </Form>
-  </Col>
-)
+  <Card style={styleText}>
+    <CardBody>
+      <h3 style={styleHeader}>LOGIN</h3>
+      <Form style={styleForm}>
+        <FormGroup>
+          <Label for="loginEmail" />
+          <Input
+            type="email"
+            name="loginEmail"
+            id="loginEmail"
+            placeholder="Email"
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="loginPassword" />
+          <Input
+            type="password"
+            name="loginPassword"
+            id="loginPassword"
+            placeholder="Password"
+          />
+        </FormGroup>
+        <FormGroup>
+          <Link to="/forgot">Forgot password?</Link>
+        </FormGroup>
+        <br />
+        <Button style={styleButton} color="success">
+          LOGIN
+        </Button>
+      </Form>
+    </CardBody>
+  </Card>
+);
 
 // WELCOME
 
 const Welcome = () => (
   <div>
-    <Row className="text-center" id="row-logo">
-      <Col>
-        <Logo />
-      </Col>
-    </Row>
-
-    <Row className="text-center" id="row-tagline">
-      <Col>
-        <Tagline />
-      </Col>
-    </Row>
-
-    <hr />
-
     <Row className="center" id="row-auth">
-      <ColumnSignup />
-      <ColumnLogin />
+      <Col>
+        <ColumnLogin />
+      </Col>
+      <Col>
+        <ColumnSignup />
+      </Col>
     </Row>
   </div>
-)
+);
 
 const Guest = () => (
   <div>
-  <Button>Continue as Guest</Button>
+    <Button>Continue as Guest</Button>
   </div>
-)
+);
 
-export default Welcome
+export default Welcome;
