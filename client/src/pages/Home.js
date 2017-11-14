@@ -14,10 +14,18 @@ import {
 } from "reactstrap";
 
 import DATA_EVENTS from "../data/questions";
+import Contentimg1 from "../static/Fest.jpeg";
+
+// -----------------------------------------------------------------------------
 
 const div1 = {
   margin: "0"
 };
+
+const styleBox = {
+  backgroundColor: "white",
+  display: "inline-block"
+}
 
 const Text1 = {
   float: "left"
@@ -56,7 +64,17 @@ const Home = () => (
         <span><hr/></span>
         </Col>
       </Row>
+      <Row>
+        <Container style={styleBox}>
+          <img src={Contentimg1} alt="Fest 1" style={Text1}/>
+          <div style={Text1}>
 
+          </div>
+          <div style={Text1}>
+            <i>  &copy; </i>
+          </div>
+        </Container>
+      </Row>
       {DATA_EVENTS.map(question => {
         return (
           <Card body className="text-center">
