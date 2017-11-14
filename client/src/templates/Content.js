@@ -2,7 +2,7 @@ import React from "react"
 import { Row } from "reactstrap"
 
 const ContainerStyle = {
-  margin: "10px"
+  margin: "0 auto",
 }
 
 const Content = props => (

@@ -122,7 +122,7 @@ const Home = () => (
     <Container>
       <Row>
         <Col xs={8} style={styleText1}>
-          <NavLink to="/home" style={styleFootHead}>
+          <NavLink to="/" style={styleFootHead}>
             {" "}
             EVENTHUNT
           </NavLink>
