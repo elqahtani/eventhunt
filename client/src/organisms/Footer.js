@@ -4,6 +4,10 @@ import IconF from "../static/iconF.png";
 import IconT from "../static/twitter.png";
 import IconL from "../static/linkedin.png";
 import IconI from "../static/instagram.png";
+import IconCall from "../static/call.png";
+import IconMail from "../static/mail.png";
+import IconMap from "../static/map.png";
+
 
 // -----------------------------------------------------------------------------
 
@@ -25,6 +29,14 @@ const styleFoot3 = {
   fontSize: "13px",
   fontSize: "80%",
   color: "#ffffff",
+}
+
+const styleFootParagraph = {
+  fontFamily: "lato",
+  fontSize: "13px",
+  fontSize: "80%",
+  color: "#ffffff",
+  marginTop: "10px"
 }
 
 const style = {
@@ -50,13 +62,34 @@ const styleFootHead = {
 
 const styleButton = {
   backgroundColor: "#ffa406",
-  fontSize: "13px"
+  fontSize: "13px",
+  width: "200px"
 }
 
 const styleIcon = {
   width: "6%",
   marginRight: "20px"
 }
+
+
+const styleIconCall = {
+  width: "24px",
+  marginRight: "20px"
+}
+
+const styleIconMail = {
+  width: "24px",
+  marginRight: "22px",
+  marginLeft: "35px"
+}
+
+const styleIconMap = {
+  width: "24px",
+  marginRight: "22px",
+  marginLeft: "35px"
+
+}
+
 
 // -----------------------------------------------------------------------------
 
@@ -82,17 +115,15 @@ const Footer = () => (
           <Col xs="4" style={styleCol}>
             <h5>OUR OFFICE</h5>
             <p style={styleFoot3}>Jogja Digital Valey</p>
-            <p style={styleFoot3}>Jl. Kartini No.7, Terban, Gondokusuman,</p>
-            <p style={styleFoot3}>Kota Yogyakarta,</p>
-            <p style={styleFoot3}> Daerah Istimewa Yogyakarta 55223</p>
+            <p style={styleFoot3}>Jl. Kartini No.7, Terban, Gondokusuman,Kota Yogyakarta, Daerah Istimewa Yogyakarta, Indonesia 55223</p>
           </Col>
           <Col xs="4" style={styleCol}>
             <h5>OUR CONTACT</h5>
-            <Button style={styleButton} > &#128222; (0274) 556565</Button>
+            <Button style={styleButton} > <img src={IconCall} alt="call" style={styleIconCall}/> (0274) 556565</Button>
             <br/>
             <br/>
-            <p style={styleFoot3}> &#128232;  halo@eventhunt.co</p>
-            <p style={styleFoot3}> &#10143;   Open in Maps</p>
+            <p style={styleFoot3}> <img src={IconMail} alt="mail" style={styleIconMail}/>  halo@eventhunt.co</p>
+            <p style={styleFoot3}> <img src={IconMap} alt="map" style={styleIconMap}/>   Open in Maps</p>
           </Col>
         </Row>
     </Container>
