@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Row,
+  Container,
   Col,
   Card,
   CardBody,
@@ -11,23 +12,24 @@ import {
   Input
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import logo from "../static/logo.png";
 
-// STYLING_CSS -----------------------------------------------------------
+// STYLING_CSS ---------------------------------------------------
 
 const styleForm = {
-  width: "300px",
+  width: "100%",
   height: "350px"
 };
 
 const styleButton = {
-  width: "300px"
+  width: "100%",
+  bottom: "0"
 };
 
 const styleText = {
   fontFamily: "lato",
+  width: "80%",
   fontSize: "16px",
-  margin: "0px"
+  margin: "0px auto"
 };
 
 const styleHeader = {
@@ -35,7 +37,8 @@ const styleHeader = {
   fontSize: "16px",
   margin: "0px",
   fontWeight: "bold",
-  borderBottom: "solid #1DE9B6 "
+  borderBottom: "solid #1DE9B6",
+  marginRight: "240px"
 };
 
 // COLUMN_SIGNUP
@@ -120,8 +123,8 @@ const ColumnLogin = () => (
 // WELCOME
 
 const Welcome = () => (
-  <div>
-    <Row className="center" id="row-auth">
+  <Container >
+    <Row className="center" id="row-auth" >
       <Col>
         <ColumnLogin />
       </Col>
@@ -129,13 +132,7 @@ const Welcome = () => (
         <ColumnSignup />
       </Col>
     </Row>
-  </div>
-);
-
-const Guest = () => (
-  <div>
-    <Button>Continue as Guest</Button>
-  </div>
+  </Container>
 );
 
 export default Welcome;

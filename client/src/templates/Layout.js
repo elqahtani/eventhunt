@@ -2,24 +2,21 @@ import React from "react";
 import { Container } from "reactstrap";
 
 import Content from "./Content";
-
 import NavigationBar from "../organisms/NavigationBar";
 import Footer from "../organisms/Footer";
 
+// STYLING_CSS ---------------------------------------------------
 const ContainerStyle = {
-  margin: "50px",
-  display:"grid"
+  margin: "0 auto",
 }
 
-const ContainerChild = {
-  gridColumn: "1 / 3"
-}
 
+// Render component ---------------------------------------------------
 const Layout = props => (
   <div>
     <NavigationBar />
     <Container style={ContainerStyle}>
-      <Content style={ContainerChild}>{props.children}</Content>
+      <Content >{props.children}</Content>
     </Container>
     <Footer />
   </div>
