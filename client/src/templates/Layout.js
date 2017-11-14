@@ -10,10 +10,14 @@ const ContainerStyle = {
   margin: "0 auto",
 }
 
+const styleCanvas={
+  backgroundColor: "#f6f9fa"
+}
+
 
 // Render component ---------------------------------------------------
 const Layout = props => (
-  <div>
+  <div style={styleCanvas}>
     <NavigationBar />
     <Container style={ContainerStyle}>
       <Content >{props.children}</Content>
