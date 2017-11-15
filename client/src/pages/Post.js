@@ -11,7 +11,8 @@ import {
   Label,
   Input
 } from "reactstrap";
-import { Link } from "react-router-dom";
+
+import Category from "../atoms/Category";
 
 // STYLING_CSS ---------------------------------------------------
 
@@ -27,7 +28,7 @@ const styleButton = {
 
 const styleText = {
   fontFamily: "lato",
-  width: "60%",
+  width: "80%",
   fontSize: "16px",
   marginRight: "100px"
 };
@@ -51,7 +52,7 @@ const styleTextarea = {
 const ColumnPost = () => (
   <Card style={styleText}>
     <CardBody>
-      <h3 style={styleHeader}>REGISTER</h3>
+      <h3 style={styleHeader}>POST EVENT</h3>
       <Form style={styleForm}>
         <FormGroup>
           <Label for="eventTitle" />
@@ -110,7 +111,7 @@ const ColumnPost = () => (
         </FormGroup>
         <FormGroup>
           <Label for="EventDescription" />
-          <textArea
+          <textarea
             style={styleTextarea}
             type="text"
             name="EventDescription"
@@ -134,6 +135,7 @@ const Post = () => (
       <Col>
         <ColumnPost />
       </Col>
+      <Category />
     </Row>
   </Container>
 );
