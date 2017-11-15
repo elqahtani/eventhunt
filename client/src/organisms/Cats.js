@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import EventList from "../organisms/EventList";
-import Cats from "../organisms/Cats";
 
 import {
   Row,
@@ -17,7 +15,6 @@ import {
 
 // -----------------------------------------------------------------------------
 
-
 const div1 = {
   fontWeight: "bold",
   fontSize: "16px",
@@ -25,15 +22,12 @@ const div1 = {
   padding: "20px"
 };
 
-const Home = () => (
+const Categories = () => (
   <div style={div1}>
     <Container>
-    <Row>
-      <Col><EventList /></Col>
-      <Col><Cats /></Col>
-    </Row>
+      <Row />
     </Container>
   </div>
 );
 
-export default Home;
+export default Categories;

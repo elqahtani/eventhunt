@@ -17,13 +17,21 @@ import Category from "../atoms/Category";
 // STYLING_CSS ---------------------------------------------------
 
 const styleForm = {
-  width: "50%",
-  height: "650px"
+  width: "100%",
+  height: "700px"
+};
+
+const styleInput = {
+  border: "none",
+  borderBottom: "1px solid #CFD8DC",
+  marginBottom: "30px",
+  width: "100%"
 };
 
 const styleButton = {
-  width: "100%",
-  bottom: "0"
+  width: "94%",
+  position: "absolute",
+  bottom: "10px"
 };
 
 const styleText = {
@@ -37,14 +45,16 @@ const styleHeader = {
   fontFamily: "lato",
   fontSize: "16px",
   margin: "0px",
+  marginRight: "450px",
   fontWeight: "bold",
-  borderBottom: "solid #1DE9B6",
-  marginRight: "240px"
+  borderBottom: "solid #1DE9B6"
 };
 
+
 const styleTextarea = {
-  width: "500px",
-  height: "100px"
+  width: "100%",
+  border: "none",
+  borderBottom: "1px solid #CFD8DC"
 };
 
 // COLUMN_POST
@@ -57,6 +67,7 @@ const ColumnPost = () => (
         <FormGroup>
           <Label for="eventTitle" />
           <Input
+            style={styleInput}
             type="text"
             name="eventTitle"
             id="eventTitle"
@@ -64,8 +75,19 @@ const ColumnPost = () => (
           />
         </FormGroup>
         <FormGroup>
+          <Label for="eventVenue" />
+          <Input
+            style={styleInput}
+            type="text"
+            name="eventVenue"
+            id="eventVenue"
+            placeholder="Location"
+          />
+        </FormGroup>
+        <FormGroup>
           <Label for="eventDate" />
           <Input
+            style={styleInput}
             type="Date"
             name="eventDate"
             id="eventDate"
@@ -73,17 +95,9 @@ const ColumnPost = () => (
           />
         </FormGroup>
         <FormGroup>
-          <Label for="eventVenue" />
-          <Input
-            type="text"
-            name="eventVenue"
-            id="eventVenue"
-            placeholder="Venue"
-          />
-        </FormGroup>
-        <FormGroup>
           <Label for="eventTime" />
           <Input
+            style={styleInput}
             type="time"
             name="eventTime"
             id="eventTime"
@@ -93,6 +107,7 @@ const ColumnPost = () => (
         <FormGroup>
           <Label for="eventCategory" />
           <Input
+            style={styleInput}
             type="text"
             name="eventCategory"
             id="eventCategory"
@@ -102,6 +117,7 @@ const ColumnPost = () => (
         <FormGroup>
           <Label for="upload" />
           <Input
+            style={styleInput}
             type="file"
             name="picture"
             id="picture"
