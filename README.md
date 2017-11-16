@@ -46,7 +46,7 @@ Design | https://invis.io/p/P21D8H6FB8XH
 - https://meetup.com
 - https://seputarevent.com
 - https://producthunt.com
-- https://github.com/eventbyte
+- https://github.com/eventhunt
 
 --------------------------------------------------------------------------------
 
@@ -160,7 +160,7 @@ Design | https://invis.io/p/P21D8H6FB8XH
     detailLocation: "Impact Hub Jakarta, Kemang", // optional
   },
   url: {
-    plain: "https://eventbyte.co/event/1" // optional
+    plain: "https://eventhunt.co/event/1" // optional
   },
   createdAt: ISODate(), // timestamp
   updatedAt: ISODate() // timestamp
