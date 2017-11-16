@@ -31,11 +31,16 @@ const div1 = {
 
 const styleBox = {
   backgroundColor: "white",
+  padding: "0",
   display: "inline-block"
 }
 
 const Text1 = {
-  float: "left"
+  float: "left",
+  fontSize: "13px",
+  fontWeight: "normal",
+  margin:"0",
+  width:"200px"
 };
 
 const Text2 = {
@@ -55,7 +60,6 @@ const Text3 = {
 
 const Events = () => (
   <div style={div1}>
-
       <Row >
         <Col sm={{ size: 'auto', offset: 1 }}>
         <h5 style={Text3}>We found match events</h5>
@@ -69,7 +73,7 @@ const Events = () => (
       </Row>
       <Row>
         <Container style={styleBox}>
-          <Col>  <img src={Contentimg1} alt="Fest 1" style={Text1}/></Col>
+          <Col style={div1}><img src={Contentimg1} alt="Fest 1" style={Text1}/></Col>
           <Col>
             <Row style={Text1}>
               <p>Jazz Gunung 2017</p>
@@ -87,12 +91,6 @@ const Events = () => (
             </Row>
           </Col>
         </Container>
-
-          <Col>
-            <Row>
-              posted by
-            </Row>
-          </Col>
       </Row>
 
 

@@ -19,6 +19,15 @@ const styleCol = {
   padding: "0"
 };
 
+const IconCategory = {
+  backgroundColor: "#C8E6C9",
+  padding: "5px",
+  color: "#ffffff",
+  fontFamily: "lato",
+  borderRadius: "10px",
+  marginRight: "25px"
+};
+
 const IconCategory1 = {
   backgroundColor: "#C8E6C9",
   padding: "5px",
