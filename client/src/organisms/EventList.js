@@ -29,6 +29,16 @@ const div1 = {
   padding: "0"
 };
 
+const div2 = {
+  margin: "5px",
+  padding: "5px"
+};
+
+const div3 = {
+  width: "80%",
+  float: "right"
+};
+
 const styleBox = {
   backgroundColor: "white",
   padding: "0",
@@ -58,43 +68,34 @@ const Text3 = {
   padding: "20px"
 };
 
-const Events = () => (
+const Eventlist = () => (
   <div style={div1}>
-      <Row >
+      <Row>
         <Col sm={{ size: 'auto', offset: 1 }}>
-        <h5 style={Text3}>We found match events</h5>
-        <p style={Text2}>Seminar & traning</p>
-        <p style={Text2}>Yogyakarta</p>
+          <h5 style={Text3}>We found match events</h5>
+          <p style={Text2}>Seminar & traning</p>
+          <p style={Text2}>Yogyakarta</p>
         </Col>
       </Row>
       <Row>
-        <Col><p style={div1}>TODAY ()</p></Col>
-        <Col><span style={div1}><hr/></span></Col>
+        <Col><p style={div1}>TODAY () <span style={div3}><hr/></span></p></Col>
       </Row>
       <Row>
         <Container style={styleBox}>
-          <Col style={div1}><img src={Contentimg1} alt="Fest 1" style={Text1}/></Col>
-          <Col>
-            <Row style={Text1}>
-              <p>Jazz Gunung 2017</p>
-              <p>East Java, Indonesia</p>
-            </Row>
-            <Row style={Text1}>
-              <p>Posted by   <span></span> via <span></span></p>
-              <p>East Java, Indonesia</p>
-            </Row>
-            <Row style={Text1}>
-              <p>Posted by   <span></span> via <span></span></p>
-            </Row>
-            <Row>
-              <p style={Text1}> <img src={IconMap} alt="map" style={styleIconMap}/>   Open in Maps</p>
-            </Row>
-          </Col>
+           <img src={Contentimg1} alt="Fest 1" style={Text1}/>
+
+                <Row style={Text1}>
+                  <p>Jazz Gunung 2017</p>
+                  <p>East Java, Indonesia</p>
+                  <p>Posted by   <span></span> via <span></span></p>
+                  <p>East Java, Indonesia</p>
+                  <p>Posted by   <span></span> via <span></span></p>
+                  <p style={Text1}> <img src={IconMap} alt="map" style={styleIconMap}/>   Open in Maps</p>
+                </Row>
+
         </Container>
       </Row>
-
-
   </div>
 );
 
-export default Events;
+export default Eventlist;

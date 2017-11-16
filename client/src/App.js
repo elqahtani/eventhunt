@@ -10,6 +10,13 @@ import PopularEvent from "./pages/PopularEvent"
 import FAQ from "./pages/FAQ"
 import Post from "./pages/Post"
 import Profile from "./pages/Profile"
+import NotFound from "./pages/NotFound"
+
+// import requireAuth from "./templates/requireAuth"
+
+import helpers from "./helpers"
+
+const user = helpers.decodeToken()
 
 const App = () => (
   <Router>
@@ -20,6 +27,7 @@ const App = () => (
       <Route path="/FAQ" component={FAQ} />
       <Route path="/post/:id" component={Post} />
       <Route path="/profile/:id" component={Profile} />
+      <Route path="/FAQ" component={NotFound} />
     </Layout>
   </Router>
 )
