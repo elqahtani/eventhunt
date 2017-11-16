@@ -23,7 +23,7 @@ const USER = {
 const styleFootHead = {
   fontFamily: "lato",
   marginRight: "50px",
-  fontSize: "13px",
+  fontSize: "16px",
   fontWeight: "bold",
   textAlign: "center",
   color: "#ffffff"
@@ -33,7 +33,7 @@ const styleBanner = {
   backgroundImage: `url(${BackgroundImg})`,
   padding: "0",
   color: "#ffffff",
-  minHeight: "400px"
+  minHeight: "500px"
 };
 
 const styleText = {
@@ -75,7 +75,7 @@ const styleText3 = {
   fontFamily: "lato",
   fontSize: "36px",
   textAlign: "center",
-  marginBottom: "0",
+  marginBottom: "100",
   color: "#ffffff"
 };
 
@@ -84,7 +84,7 @@ const styleText4 = {
   fontSize: "24px",
   fontWeight: "bold",
   textAlign: "center",
-  margin: "60px",
+  margin:"100px",
   color: "#ffffff"
 };
 

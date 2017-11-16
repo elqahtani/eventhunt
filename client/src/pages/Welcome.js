@@ -17,12 +17,18 @@ import { Link } from "react-router-dom";
 
 const styleForm = {
   width: "100%",
-  height: "350px"
+  height: "350px",
+};
+
+const styleInput = {
+  border: "none",
+  borderBottom: "1px solid #CFD8DC"
 };
 
 const styleButton = {
-  width: "100%",
-  bottom: "0"
+  width: "90%",
+  position: "absolute",
+  bottom: "10px"
 };
 
 const styleText = {
@@ -48,9 +54,11 @@ const ColumnSignup = () => (
     <CardBody>
       <h3 style={styleHeader}>REGISTER</h3>
       <Form style={styleForm}>
+      <br/>
         <FormGroup>
           <Label for="signupFullName" />
           <Input
+            style={styleInput}
             type="text"
             name="signupFullName"
             id="signupFullName"
@@ -60,6 +68,7 @@ const ColumnSignup = () => (
         <FormGroup>
           <Label for="signupEmail" />
           <Input
+            style={styleInput}
             type="email"
             name="signupEmail"
             id="signupEmail"
@@ -69,6 +78,7 @@ const ColumnSignup = () => (
         <FormGroup>
           <Label for="signupPassword" />
           <Input
+            style={styleInput}
             type="password"
             name="signupPassword"
             id="signupPassword"
@@ -90,9 +100,11 @@ const ColumnLogin = () => (
     <CardBody>
       <h3 style={styleHeader}>LOGIN</h3>
       <Form style={styleForm}>
+        <br/>
         <FormGroup>
           <Label for="loginEmail" />
           <Input
+            style={styleInput}
             type="email"
             name="loginEmail"
             id="loginEmail"
@@ -102,12 +114,14 @@ const ColumnLogin = () => (
         <FormGroup>
           <Label for="loginPassword" />
           <Input
+            style={styleInput}
             type="password"
             name="loginPassword"
             id="loginPassword"
             placeholder="Password"
           />
         </FormGroup>
+        <br/>
         <FormGroup>
           <Link to="/forgot">Forgot password?</Link>
         </FormGroup>

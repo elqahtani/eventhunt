@@ -4,6 +4,7 @@ import IconF from "../static/iconF.png";
 import IconT from "../static/twitter.png";
 import IconL from "../static/linkedin.png";
 import IconI from "../static/instagram.png";
+import IconG from "../static/gplus.png";
 import IconCall from "../static/call.png";
 import IconMail from "../static/mail.png";
 import IconMap from "../static/map.png";
@@ -17,11 +18,12 @@ const styleFoot = {
 }
 
 const styleFoot2 = {
-  margin: "20px",
+  marginTop: "20px",
+  marginBottom: "20px",
   fontFamily: "lato",
   fontSize: "13px",
   fontSize: "80%",
-  color: "#616161",
+  color: "#616161"
 }
 
 const styleFoot3 = {
@@ -68,7 +70,8 @@ const styleButton = {
 
 const styleIcon = {
   width: "6%",
-  marginRight: "20px"
+  marginRight: "20px",
+  float: "right"
 }
 
 
@@ -87,7 +90,6 @@ const styleIconMap = {
   width: "24px",
   marginRight: "22px",
   marginLeft: "35px"
-
 }
 
 
@@ -132,12 +134,13 @@ const Footer = () => (
     <Container>
       <Row >
         <Col xs="4">Copyright &copy;2017. EventHunt Development Team.</Col>
-        <Col xs="4" />
+        <Col xs="3" />
         <Col sm="4">
-          <a href=""><img src={IconF} alt="facebook" style={styleIcon}/></a>
           <a href=""><img src={IconT} alt="twitter" style={styleIcon}/></a>
+          <a href=""><img src={IconF} alt="facebook" style={styleIcon}/></a>
           <a href=""><img src={IconL} alt="linkedin" style={styleIcon}/></a>
           <a href=""><img src={IconI} alt="instagram" style={styleIcon}/></a>
+          <a href=""><img src={IconG} alt="google +" style={styleIcon}/></a>
         </Col>
       </Row>
     </Container>
