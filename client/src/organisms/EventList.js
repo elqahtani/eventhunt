@@ -85,9 +85,10 @@ const Eventlist = () => (
            <img src={Contentimg1} alt="Fest 1" style={Text1}/>
 
                 <Row style={Text1}>
-                  <p>Jazz Gunung 2017</p>
+                  <p style={Text1}>Jazz Gunung 2017</p>
+                  <p>Posted by   <span style={Text1}></span> via <span style={Text1}></span></p>
                   <p>East Java, Indonesia</p>
-                  <p>Posted by   <span></span> via <span></span></p>
+
                   <p>East Java, Indonesia</p>
                   <p>Posted by   <span></span> via <span></span></p>
                   <p style={Text1}> <img src={IconMap} alt="map" style={styleIconMap}/>   Open in Maps</p>

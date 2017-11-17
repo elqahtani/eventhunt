@@ -45,7 +45,7 @@ const styleHeader = {
   fontFamily: "lato",
   fontSize: "16px",
   margin: "0px",
-  marginRight: "450px",
+  marginRight: "86%",
   fontWeight: "bold",
   borderBottom: "solid #1DE9B6"
 };
@@ -60,87 +60,91 @@ const styleTextarea = {
 // COLUMN_POST
 
 const ColumnPost = () => (
-  <Card style={styleText}>
-    <CardBody>
-      <h3 style={styleHeader}>POST EVENT</h3>
-      <Form style={styleForm}>
-        <FormGroup>
-          <Label for="eventTitle" />
-          <Input
-            style={styleInput}
-            type="text"
-            name="eventTitle"
-            id="eventTitle"
-            placeholder="Event Title"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="eventVenue" />
-          <Input
-            style={styleInput}
-            type="text"
-            name="eventVenue"
-            id="eventVenue"
-            placeholder="Location"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="eventDate" />
-          <Input
-            style={styleInput}
-            type="Date"
-            name="eventDate"
-            id="eventDate"
-            placeholder="Event Date"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="eventTime" />
-          <Input
-            style={styleInput}
-            type="time"
-            name="eventTime"
-            id="eventTime"
-            placeholder="Event Time"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="eventCategory" />
-          <Input
-            style={styleInput}
-            type="text"
-            name="eventCategory"
-            id="eventCategory"
-            placeholder="Event Category"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="upload" />
-          <Input
-            style={styleInput}
-            type="file"
-            name="picture"
-            id="picture"
-            accept="image/*"
-            placeholder="Upload Picture"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="EventDescription" />
-          <textarea
-            style={styleTextarea}
-            type="text"
-            name="EventDescription"
-            id="EventDescription"
-            placeholder="Event Description"
-          />
-        </FormGroup>
-        <Button style={styleButton} color="success">
-          PUBLISH
-        </Button>
-      </Form>
-    </CardBody>
-  </Card>
+  <div>
+    <h3 style={styleHeader}>POST EVENT</h3>
+    <br/>
+    <Card style={styleText}>
+      <CardBody>
+
+        <Form style={styleForm}>
+          <FormGroup>
+            <Label for="eventTitle" />
+            <Input
+              style={styleInput}
+              type="text"
+              name="eventTitle"
+              id="eventTitle"
+              placeholder="Event Title"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="eventVenue" />
+            <Input
+              style={styleInput}
+              type="text"
+              name="eventVenue"
+              id="eventVenue"
+              placeholder="Location"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="eventDate" />
+            <Input
+              style={styleInput}
+              type="Date"
+              name="eventDate"
+              id="eventDate"
+              placeholder="Event Date"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="eventTime" />
+            <Input
+              style={styleInput}
+              type="time"
+              name="eventTime"
+              id="eventTime"
+              placeholder="Event Time"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="eventCategory" />
+            <Input
+              style={styleInput}
+              type="text"
+              name="eventCategory"
+              id="eventCategory"
+              placeholder="Event Category"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="upload" />
+            <Input
+              style={styleInput}
+              type="file"
+              name="picture"
+              id="picture"
+              accept="image/*"
+              placeholder="Upload Picture"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="EventDescription" />
+            <textarea
+              style={styleTextarea}
+              type="text"
+              name="EventDescription"
+              id="EventDescription"
+              placeholder="Event Description"
+            />
+          </FormGroup>
+          <Button style={styleButton} color="success">
+            PUBLISH
+          </Button>
+        </Form>
+      </CardBody>
+    </Card>
+  </div>
 );
 
 // POST

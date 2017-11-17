@@ -142,8 +142,8 @@ const Home = () => (
         <Col xs={4} className="navbar-inverse">
           <div style={styleText6}>
           <Row id="row-navigation">
-            {!userToken && (<SignIn />)}
-            {userToken && (<Dropdown />)}
+            {userToken && (<SignIn />)}
+            {!userToken && (<Dropdown />)}
           </Row>
           </div>
           <NavLink to={`/post/${USER._id}`} style={styleText5}>
