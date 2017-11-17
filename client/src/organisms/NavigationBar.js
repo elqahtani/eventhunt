@@ -10,11 +10,18 @@ import {
   BreadcrumbItem
 } from "reactstrap";
 
+import SignIn from "../atoms/SignIn";
+import Dropdown from "../atoms/Dropdown";
+import Banner from "../atoms/Banner";
+import BannerProfile from "../atoms/BannerProfile";
 import Link from "../atoms/Link";
 import BackgroundImg from "../static/bgheader.png";
+import helpers from "../helpers"
 // import logo from "../static/logo.png";
 
 // -----------------------------------------------------------------------------
+
+const userToken = helpers.decodeToken()
 
 const USER = {
   _id: 0,
@@ -95,20 +102,16 @@ const styleText5 = {
   float: "right",
   padding: "0",
   fontSize: "13px",
-  marginTop: "20px",
+  marginTop: "23px",
   marginRight: "30px",
   color: "#ffffff"
 };
 
 const styleText6 = {
-  backgroundColor: "#1DE9B6",
   display: "inline",
   float: "right",
-  padding: "3px",
-  marginTop: "15px",
-  marginRight: "30px"
-};
-const styleText7 = {
+  marginTop: "0px",
+  marginRight: "30px",
   fontFamily: "lato",
   fontWeight: "bold",
   fontSize: "13px",
@@ -123,7 +126,6 @@ const Home = () => (
       <Row>
         <Col xs={8} style={styleText1}>
           <NavLink to="/" style={styleFootHead}>
-            {" "}
             EVENTHUNT
           </NavLink>
           <NavLink exact to="/" style={styleText2A}>
@@ -138,27 +140,20 @@ const Home = () => (
         </Col>
 
         <Col xs={4} className="navbar-inverse">
-          <Breadcrumb style={styleText6}>
-            <BreadcrumbItem>
-              {" "}
-              <NavLink to="/welcome" style={styleText7}>SIGN IN</NavLink>
-            </BreadcrumbItem>
-          </Breadcrumb>
+          <div style={styleText6}>
+          <Row id="row-navigation">
+            {!userToken && (<SignIn />)}
+            {userToken && (<Dropdown />)}
+          </Row>
+          </div>
           <NavLink to={`/post/${USER._id}`} style={styleText5}>
             POST EVENT
           </NavLink>
         </Col>
       </Row>
+      {userToken && (<Banner />)}
+      {!userToken && (<BannerProfile />)}
       <Row >
-        <Container>
-          <h3 style={styleText4}>FIND & POST POPULAR EVENT</h3>
-          <p style={styleText3}>
-            Find popular events that match your passion
-          </p>
-          <p style={styleText3}>
-           or share events nearby
-          </p>
-        </Container>
       </Row>
     </Container>
   </div>
