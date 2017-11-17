@@ -5,7 +5,13 @@ import { NavLink } from "react-router-dom";
 // STYLING_CSS ---------------------------------------------------
 
 const styleHead = {
-  fontFamily: "lato"
+  fontFamily: "lato",
+  fontSize: "16px",
+  margin: "0px",
+  marginRight: "86%",
+  marginBottom: "20px",
+  fontWeight: "bold",
+  borderBottom: "solid #1DE9B6"
 };
 
 const styleLi = {
