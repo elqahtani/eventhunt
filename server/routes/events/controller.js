@@ -1,5 +1,5 @@
 const User = require("../users/model")
-const Question = require("./model")
+const Event = require("./model")
 
 const helpers = require("../helpers")
 
@@ -13,16 +13,16 @@ module.exports = {
   },
 
   get: (req, res, next) => {
-    Question.find({})
+    Event.find({})
       .populate("createdBy", "-password")
       .exec((err, events) => {
         if (err) res.send(err)
-        else res.send(questions)
+        else res.send(Events)
       })
   },
 
   getOne: (req, res, next) => {
-    Question.findOne({ id: req.params.id })
+    Event.findOne({ id: req.params.id })
       .populate("createdBy", "-password")
       .exec((err, events) => {
         if (err) res.send(err)

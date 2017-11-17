@@ -11,7 +11,7 @@ const EventSchema = mongoose.Schema({
 })
 
 EventSchema.plugin(AutoIncrement, {
-  id: "question_id",
+  id: "event_id",
   inc_field: "id"
 })
 
