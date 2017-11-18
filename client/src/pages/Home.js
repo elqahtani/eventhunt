@@ -31,7 +31,7 @@ const div3 = {
 fontFamily: "lato",
 width: "80%",
 fontSize: "16px",
-marginRight: "100px"
+marginRight: "40px"
 };
 
 const Home = () => (
