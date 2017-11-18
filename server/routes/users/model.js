@@ -19,7 +19,11 @@ const UserSchema = mongoose.Schema({
     description: {
       type: String,
       default: "I am Event Organizer"
-    }
+    },
+    location: {
+      type: String,
+      default: "Yogyakarta"
+    },
   },
   name: String,
   title: String,
