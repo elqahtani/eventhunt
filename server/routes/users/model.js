@@ -51,13 +51,13 @@ const UserSchema = mongoose.Schema({
     ref: "User"
   },
   events: {
-      submitted: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: "Event"
-        }
-      ],
-    }
+    submitted: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Event"
+      }
+    ]
+  }
 })
 
 UserSchema.plugin(AutoIncrement, { id: "user_id", inc_field: "id" })
