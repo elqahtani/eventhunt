@@ -6,7 +6,7 @@ const ContainerStyle = {
 }
 
 const Content = props => (
-  <Row style={ContainerStyle} className="m-5 justify-content-md-center">{props.children}</Row>
+  <div style={ContainerStyle} className="contentCenter">{props.children}</div>
 )
 
 export default Content

@@ -1,22 +1,46 @@
-import React from "react"
+import React from "react";
+import { Link } from "react-router-dom";
+import EventList from "../organisms/EventList";
+import Category from "../atoms/Category";
 
-import DATA_PROFILES from "../data/profiles"
+import {
+  Row,
+  Col,
+  Card,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Button,
+  Container
+} from "reactstrap";
 
-const Profile = props => (
-  <div>
-    {DATA_PROFILES.filter(profile => {
-      return profile._id === Number(props.match.params.id)
-    }).map(profile => {
-      return (
-        <div key={profile._id}>
-          <h2>{profile.name}</h2>
-          {profile.title && <h4>{profile.title}</h4>}
-          {profile.bio && <p>{profile.bio}</p>}
-          <small>id: {profile._id}</small>
-        </div>
-      )
-    })}
+// -----------------------------------------------------------------------------
+
+const div1 = {
+  fontWeight: "bold",
+  fontSize: "16px",
+  padding: "20px"
+};
+
+const div2 = {
+  float: "right",
+};
+
+const div3 = {
+fontFamily: "lato",
+width: "80%",
+fontSize: "16px",
+marginRight: "100px"
+};
+
+const Profile = () => (
+  <div style={div1}>
+    <Row>
+    <Col style={div3}><EventList /></Col>
+    <Category />
+    </Row>
   </div>
-)
+);
 
-export default Profile
+export default Profile;
