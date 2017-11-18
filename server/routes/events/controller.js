@@ -17,16 +17,16 @@ module.exports = {
       .populate("createdBy", "-password")
       .exec((err, events) => {
         if (err) res.send(err)
-        else res.send(Events)
+        else res.send(events)
       })
   },
 
   getOne: (req, res, next) => {
     Event.findOne({ id: req.params.id })
       .populate("createdBy", "-password")
-      .exec((err, events) => {
+      .exec((err, Event) => {
         if (err) res.send(err)
-        else res.send(event)
+        else res.send(Event)
       })
   },
 
@@ -38,7 +38,9 @@ module.exports = {
       // PREPARE NEW Event
       const newEvent = new Event({
         title: req.body.title,
-        createdBy: user._id
+        createdBy: user._id,
+        category: req.body.category,
+        location: req.body.location
       })
 
       console.log(newEvent)
@@ -48,7 +50,7 @@ module.exports = {
         err
           ? res.send(err)
           : res.send({
-              message: "New event saved",
+              message: "New Event saved",
               data: newEvent
             })
       })
