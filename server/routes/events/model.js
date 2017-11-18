@@ -3,10 +3,36 @@ const Schema = mongoose.Schema
 const AutoIncrement = require("mongoose-sequence")(mongoose)
 
 const EventSchema = mongoose.Schema({
-  title: String,
+  title: {
+  	type: String,
+  },	
   createdBy: {
     type: Schema.Types.ObjectId,
     ref: "User"
+  },
+  description:{
+  	type: String,
+  },
+  image: {
+  	type: String,
+  	default: ""
+  },
+  category: {
+  	type: String,
+  	default: ""
+  },
+  schedule: {
+  	date: {
+  		type: Date
+  	},
+  	timezone: {
+  		type: String,
+  		default: "GMT+7"
+  	},
+  },
+  location: {
+  	type: String,
+  	default: ""
   }
 })
 

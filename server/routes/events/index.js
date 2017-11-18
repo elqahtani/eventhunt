@@ -3,7 +3,7 @@ const router = express.Router()
 
 const event = require("./controller")
 
-router.delete("/destroy", event.destroy)
+// router.delete("/destroy", event.destroy)
 
 router.get("/", event.get)
 router.get("/:id", event.getOne)
