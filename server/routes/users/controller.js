@@ -1,6 +1,11 @@
 const mongoose = require("mongoose")
 
 const User = require("../users/model")
+const Event = require("../events/model")
+
+const helpers = require("../helpers")
+
+
 
 module.exports = {
   destroy: (req, res, next) => {

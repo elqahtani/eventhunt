@@ -40,7 +40,8 @@ module.exports = {
         title: req.body.title,
         createdBy: user._id,
         category: req.body.category,
-        location: req.body.location
+        location: req.body.location,
+        description: req.body.description
       })
 
       console.log(newEvent)

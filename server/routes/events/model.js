@@ -14,8 +14,7 @@ const EventSchema = mongoose.Schema({
   	type: String,
   },
   image: {
-  	type: String,
-  	default: ""
+  	type: Schema.Types.Mixed
   },
   category: {
   	type: String,
