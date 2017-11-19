@@ -14,6 +14,7 @@ module.exports = {
 
   get: (req, res, next) => {
     Event.find({})
+      .sort({createdAt: -1})
       .populate("createdBy", "-password")
       .exec((err, events) => {
         if (err) res.send(err)
@@ -41,8 +42,11 @@ module.exports = {
         createdBy: user._id,
         category: req.body.category,
         location: req.body.location,
-        description: req.body.description
+        description: req.body.description,
+        createdAt: req.body.createdAt
       })
+
+      // newEvent = newEvent.sort({createdAt: -1})
 
       console.log(newEvent)
 
