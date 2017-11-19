@@ -6,13 +6,6 @@ import Category from "../atoms/Category";
 import {
   Row,
   Col,
-  Card,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-  Container
 } from "reactstrap";
 
 // -----------------------------------------------------------------------------
@@ -21,10 +14,6 @@ const div1 = {
   fontWeight: "bold",
   fontSize: "16px",
   padding: "20px"
-};
-
-const div2 = {
-  float: "right",
 };
 
 const div3 = {

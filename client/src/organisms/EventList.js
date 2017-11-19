@@ -5,12 +5,7 @@ import {
   Row,
   Col,
   Card,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
   Button,
-  Container
 } from "reactstrap";
 
 import IconMap from "../static/mapRED.png";
@@ -28,11 +23,6 @@ const styleIconMap = {
 const div1 = {
   margin: "0",
   padding: "0"
-};
-
-const div2 = {
-  margin: "5px",
-  padding: "5px"
 };
 
 const div3 = {

@@ -9,44 +9,17 @@ import {
   CardSubtitle,
   CardText,
   CardImg,
-  Button,
-  Form,
-  Label
 } from "reactstrap";
 
 import Category from "../atoms/Category";
 
 // STYLING_CSS ---------------------------------------------------
 
-const styleForm = {
-  width: "50%",
-  height: "650px"
-};
-
-const styleButton = {
-  width: "100%",
-  bottom: "0"
-};
-
 const styleText = {
   fontFamily: "lato",
   width: "80%",
   fontSize: "16px",
   marginRight: "100px"
-};
-
-const styleHeader = {
-  fontFamily: "lato",
-  fontSize: "16px",
-  margin: "0px",
-  fontWeight: "bold",
-  borderBottom: "solid #1DE9B6",
-  marginRight: "240px"
-};
-
-const styleTextarea = {
-  width: "500px",
-  height: "100px"
 };
 
 // COLUMN_SINGLEEVENT

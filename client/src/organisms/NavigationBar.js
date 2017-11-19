@@ -3,10 +3,7 @@ import { NavLink } from "react-router-dom";
 import {
   Row,
   Col,
-  Navbar,
   Container,
-  Breadcrumb,
-  BreadcrumbItem
 } from "reactstrap";
 
 import SignIn from "../atoms/SignIn";
@@ -42,30 +39,10 @@ const styleBanner = {
   minHeight: "500px"
 };
 
-const styleText = {
-  fontFamily: "lato",
-  fontSize: "13px",
-  marginTop: "20px",
-  fontWeight: "bold",
-  color: "#ffffff"
-};
-
 const styleText1 = {
   padding: "0",
   fontSize: "13px",
   marginTop: "20px"
-};
-
-const styleText2 = {
-  fontFamily: "lato",
-  display: "inline",
-  float: "right",
-  padding: "0",
-  fontSize: "13px",
-  marginTop: "20px",
-  marginRight: "30px",
-  fontWeight: "bold",
-  color: "#ffffff"
 };
 
 const styleText2A = {
@@ -74,23 +51,6 @@ const styleText2A = {
   marginRight: "30px",
   padding: "0",
   fontSize: "13px",
-  color: "#ffffff"
-};
-
-const styleText3 = {
-  fontFamily: "lato",
-  fontSize: "36px",
-  textAlign: "center",
-  marginBottom: "100",
-  color: "#ffffff"
-};
-
-const styleText4 = {
-  fontFamily: "lato",
-  fontSize: "24px",
-  fontWeight: "bold",
-  textAlign: "center",
-  margin:"100px",
   color: "#ffffff"
 };
 

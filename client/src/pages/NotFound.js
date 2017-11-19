@@ -1,6 +1,5 @@
 import React from "react"
 
-import Layout from "../templates/Layout"
 
 const style1 = {
   float: "center",
