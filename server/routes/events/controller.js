@@ -63,11 +63,27 @@ module.exports = {
       // NOTIFY IF USER TOKEN IS INVALID
       res.send({ message: "User token is invalid" })
     }
-  },
+  }
 
-  delete: (req, res, next) => {},
+  // delete: (req, res, next) => {},
 
-  deleteOne: (req, res, next) => {},
+  // deleteOne: (req, res, next) => {},
 
-  putOne: (req, res, next) => {}
-}
+  // putOne: (req, res, next) => {
+  //   const token = req.headers.authorization || req.body.token
+  //   const user = helpers.decodeToken(token)
+
+  //   Event.findByIdAndUpdate({ id: req.params.id }, {
+  //     title: req.body.title,
+  //     description: req.body.description,
+  //     location: req.body.location
+  //   })
+  //   .then(function(){
+  //       Event.findOne({id: req.params.id})
+  //   .then(function(event){
+  //     res.send(event)
+  //   })
+  //   })
+  //     .catch(next)
+  //   }
+  } 
