@@ -18,7 +18,7 @@ axios.defaults.headers.common["Authorization"] = helpers.getToken();
 
 const styleForm = {
   width: "100%",
-  height: "700px"
+  height: "780px"
 };
 
 const styleInput = {
@@ -65,7 +65,8 @@ class Post extends React.Component {
       date: "",
       time: "",
       category: "",
-      description: ""
+      description: "",
+      originWebsite: ""
     };
   }
 
@@ -87,7 +88,8 @@ class Post extends React.Component {
       date: this.state.date,
       time: this.state.time,
       category: this.state.category,
-      description: this.state.description
+      description: this.state.description,
+      originWebsite: this.state.originWebsite
     };
 
     axios
@@ -95,7 +97,7 @@ class Post extends React.Component {
       .then(response => {
         // NOTIFY ASKER
         console.log(response.data);
-        alert(`Asking success!`);
+        alert(`New event posted`);
         // REDIRECT TO ANSWER
         this.props.history.push("/");
       })
@@ -139,7 +141,7 @@ class Post extends React.Component {
                 <Label for="eventDate" />
                 <Input
                   style={styleInput}
-                  type="date"
+                  type="text"
                   name="eventDate"
                   id="eventDate"
                   placeholder="Event Date"
@@ -150,10 +152,21 @@ class Post extends React.Component {
                 <Label for="eventTime" />
                 <Input
                   style={styleInput}
-                  type="time"
+                  type="text"
                   name="eventTime"
                   id="eventTime"
                   placeholder="Event Time"
+                  onChange={this.handleChange}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="eventOriginWebsite" />
+                <Input
+                  style={styleInput}
+                  type="text"
+                  name="originWebsite"
+                  id="originWebsite"
+                  placeholder="Origin Website"
                   onChange={this.handleChange}
                 />
               </FormGroup>
