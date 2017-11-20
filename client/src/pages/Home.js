@@ -1,19 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
 import EventList from "../organisms/EventList";
 import Category from "../atoms/Category";
 
-import {
-  Row,
-  Col,
-  Card,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-  Container
-} from "reactstrap";
+import { Row, Col } from "reactstrap";
 
 // -----------------------------------------------------------------------------
 
@@ -23,24 +13,70 @@ const div1 = {
   padding: "20px"
 };
 
-const div2 = {
-  float: "right",
-};
-
 const div3 = {
-fontFamily: "lato",
-width: "80%",
-fontSize: "16px",
-marginRight: "40px"
+  fontFamily: "lato",
+  width: "80%",
+  fontSize: "16px",
+  marginRight: "40px"
 };
 
-const Home = () => (
-  <div style={div1}>
-    <Row>
-    <Col style={div3}><EventList /></Col>
-    <Category />
-    </Row>
-  </div>
-);
+export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      events: []
+    };
+  }
 
-export default Home;
+  componentWillMount() {
+    this.getEvents();
+  }
+
+  getEvents() {
+    axios
+      .request({
+        method: "get",
+        url: process.env.REACT_APP_API_URL + "/api/events"
+      })
+      .then(response => {
+        console.log(response.data);
+        this.setState({ events: response.data }, () => {
+          console.log(this.state);
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  // ------------Method dibawah copy dari forum (Haidar)--------------------------
+  // ------------harus nya hasil nya sama aja dengan method di atas---------------
+
+  // const id = Number(this.props.id)
+  // axios
+  //   .get(`${process.env.REACT_APP_API_URL}/api/users/${id}`)
+  //   .then(response => {
+  //     const event = response.data
+  //     console.log(event)
+  //     this.setState({
+  //       event: event
+  //     })
+  //   })
+  //   .catch(error => {
+  //     console.log(error)
+  //   })
+
+  render() {
+    // const Home = this.state.event
+    return (
+      <div style={div1}>
+        <Row>
+          <Col style={div3}>
+            <EventList events={this.state.events} />
+          </Col>
+          <Category />
+        </Row>
+      </div>
+    );
+  }
+}

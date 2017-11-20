@@ -1,5 +1,5 @@
 import React from "react"
-import { Button, Col, Form, FormGroup, Label, Input, Card, CardBody} from "reactstrap"
+import { Button, Form, FormGroup, Label, Input, Card, CardBody} from "reactstrap"
 import axios from "axios"
 
 const initialState = {

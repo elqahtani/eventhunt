@@ -1,6 +1,5 @@
 import React from "react"
 import {Container} from "reactstrap"
-import { NavLink } from "react-router-dom"
 import axios from "axios"
 
 import IconF from "../static/iconFwhite.png";
@@ -48,29 +47,45 @@ const styleIcon2 = {
   marginLeft: "35px"
 }
 
-
 export default class Profile extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      profile: {}
+      profile: props.profile
     }
   }
 
   componentWillMount() {
-    const id = Number(this.props.id)
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/api/users/${id}`)
-      .then(response => {
-        const profile = response.data
-        console.log(profile)
-        this.setState({
-          profile: profile
-        })
-      })
-      .catch(error => {
+    this.getEvents();
+  }
+
+  getEvents(){
+    axios.request({
+      method:"get",
+      url: process.env.REACT_APP_API_URL + `/api/users/${this.state.profile.id}`
+    }).then((response) => {
+        console.log(response.data);
+        this.setState({profile: response.data},() => {
+          console.log(this.state);
+        });
+    }).catch(error => {
         console.log(error)
-      })
+    })
+
+
+    // const id = Number(this.props.id)
+    // axios
+    //   .get(`${process.env.REACT_APP_API_URL}/api/users/${id}`)
+    //   .then(response => {
+    //     const profile = response.data
+    //     console.log(profile)
+    //     this.setState({
+    //       profile: profile
+    //     })
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //   })
   }
   render() {
     const profile = this.state.profile

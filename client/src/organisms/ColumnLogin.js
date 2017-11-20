@@ -1,6 +1,6 @@
 import React from "react"
 import { withRouter } from "react-router-dom"
-import { Col, Form, FormGroup, Label, Input,  Button, Card, CardBody } from "reactstrap"
+import { Form, FormGroup, Label, Input,  Button, Card, CardBody } from "reactstrap"
 import axios from "axios"
 
 import Link from "../atoms/Link"

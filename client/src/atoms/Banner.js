@@ -1,6 +1,5 @@
 import React from "react"
 import {Container} from "reactstrap"
-import { NavLink } from "react-router-dom";
 
 const styleText3 = {
   fontFamily: "lato",

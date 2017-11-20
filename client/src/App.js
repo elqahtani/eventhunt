@@ -3,7 +3,6 @@ import React from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 
 import Layout from "./templates/Layout"
-
 import Welcome from "./pages/Welcome"
 import Home from "./pages/Home"
 import PopularEvent from "./pages/PopularEvent"

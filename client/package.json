@@ -7,14 +7,15 @@
     "jwt-decode": "^2.2.0",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
+    "react-app-env": "1.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
     "reactstrap": "next"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "dev": "react-app-env start",
+    "build": "react-app-env build",
+    "test": "react-app-env test --env=jsdom",
     "eject": "react-scripts eject"
   }
 }

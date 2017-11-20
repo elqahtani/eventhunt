@@ -22,23 +22,13 @@ const styleFoot2 = {
   marginBottom: "20px",
   fontFamily: "lato",
   fontSize: "13px",
-  fontSize: "80%",
   color: "#616161"
 }
 
 const styleFoot3 = {
   fontFamily: "lato",
   fontSize: "13px",
-  fontSize: "80%",
   color: "#ffffff",
-}
-
-const styleFootParagraph = {
-  fontFamily: "lato",
-  fontSize: "13px",
-  fontSize: "80%",
-  color: "#ffffff",
-  marginTop: "10px"
 }
 
 const style = {

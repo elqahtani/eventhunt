@@ -1,10 +1,27 @@
 import React from "react"
+import { Col } from "reactstrap"
+import { Button, Form, FormGroup, Input } from "reactstrap"
 
-import ListOfQuestions from "../organisms/ListOfQuestions"
-import Link from "../atoms/Link"
+const USER = {
+  _id: 0,
+  name: "Administrator"
+}
 
-import DATA_QUESTIONS from "../data/questions"
+const Ask = () => (
+  <Col xs={8}>
+    <Form>
+      <span>{USER.name} asked</span>
+      <FormGroup>
+        <Input
+          type="text"
+          name="askText"
+          id="askText"
+          placeholder="What is your question?"
+        />
+      </FormGroup>
+      <Button color="danger">Ask Question</Button>
+    </Form>
+  </Col>
+)
 
-const Home = () => <ListOfQuestions />
-
-export default Home
+export default Ask

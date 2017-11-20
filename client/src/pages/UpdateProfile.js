@@ -12,7 +12,7 @@ import {
   Input
 } from "reactstrap";
 
-import Category from "../atoms/Category";
+
 
 // STYLING_CSS ---------------------------------------------------
 
