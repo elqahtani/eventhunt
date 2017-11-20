@@ -4,7 +4,6 @@ import {
   Container,
   Col,
 } from "reactstrap";
-import { Link } from "react-router-dom";
 
 import ColumnSignup from "../organisms/ColumnSignup"
 import ColumnLogin from "../organisms/ColumnLogin"

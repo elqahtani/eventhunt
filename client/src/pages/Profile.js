@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import EventList from "../organisms/EventList";
 import Category from "../atoms/Category";
 

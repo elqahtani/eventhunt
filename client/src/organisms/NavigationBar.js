@@ -10,7 +10,6 @@ import SignIn from "../atoms/SignIn";
 import Dropdown from "../atoms/Dropdown";
 import Banner from "../atoms/Banner";
 import BannerProfile from "../atoms/BannerProfile";
-import Link from "../atoms/Link";
 import BackgroundImg from "../static/bgheader.png";
 import helpers from "../helpers"
 // import logo from "../static/logo.png";
