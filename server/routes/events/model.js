@@ -24,14 +24,15 @@ const EventSchema = mongoose.Schema({
   	type: String,
   	default: ""
   },
-  schedule: {
-  	date: {
-  		type: Date
+  date: {
+  		type: String,
   	},
-  	timezone: {
+  time: {
   		type: String,
   		default: "GMT+7"
-  	},
+    },
+  originWebsite: {
+    type: String,
   },
   location: {
   	type: String,
