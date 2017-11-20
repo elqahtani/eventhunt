@@ -43,7 +43,10 @@ module.exports = {
         category: req.body.category,
         location: req.body.location,
         description: req.body.description,
-        createdAt: req.body.createdAt
+        createdAt: req.body.createdAt,
+        date: req.body.date,
+        time: req.body.time,
+        originWebsite: req.body.originWebsite
       })
 
       // newEvent = newEvent.sort({createdAt: -1})
