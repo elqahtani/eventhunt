@@ -3,10 +3,7 @@ import axios from "axios";
 import EventList from "../organisms/EventList";
 import Category from "../atoms/Category";
 
-import {
-  Row,
-  Col,
-} from "reactstrap";
+import { Row, Col } from "reactstrap";
 
 // -----------------------------------------------------------------------------
 
@@ -17,54 +14,57 @@ const div1 = {
 };
 
 const div3 = {
-fontFamily: "lato",
-width: "80%",
-fontSize: "16px",
-marginRight: "40px"
+  fontFamily: "lato",
+  width: "80%",
+  fontSize: "16px",
+  marginRight: "40px"
 };
 
 export default class Home extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       events: []
-    }
+    };
   }
 
   componentWillMount() {
     this.getEvents();
   }
 
-  getEvents(){
-    axios.request({
-      method:"get",
-      url: process.env.REACT_APP_API_URL + "/api/events"
-    }).then((response) => {
+  getEvents() {
+    axios
+      .request({
+        method: "get",
+        url: process.env.REACT_APP_API_URL + "/api/events"
+      })
+      .then(response => {
         console.log(response.data);
-        this.setState({events: response.data},() => {
+        this.setState({ events: response.data }, () => {
           console.log(this.state);
         });
-    }).catch(error => {
-        console.log(error)
-    })
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
-// ------------Method dibawah copy dari forum (Haidar)--------------------------
-// ------------harus nya hasil nya sama aja dengan method di atas---------------
+  // ------------Method dibawah copy dari forum (Haidar)--------------------------
+  // ------------harus nya hasil nya sama aja dengan method di atas---------------
 
-    // const id = Number(this.props.id)
-    // axios
-    //   .get(`${process.env.REACT_APP_API_URL}/api/users/${id}`)
-    //   .then(response => {
-    //     const event = response.data
-    //     console.log(event)
-    //     this.setState({
-    //       event: event
-    //     })
-    //   })
-    //   .catch(error => {
-    //     console.log(error)
-    //   })
+  // const id = Number(this.props.id)
+  // axios
+  //   .get(`${process.env.REACT_APP_API_URL}/api/users/${id}`)
+  //   .then(response => {
+  //     const event = response.data
+  //     console.log(event)
+  //     this.setState({
+  //       event: event
+  //     })
+  //   })
+  //   .catch(error => {
+  //     console.log(error)
+  //   })
 
   render() {
     // const Home = this.state.event
@@ -72,11 +72,11 @@ export default class Home extends React.Component {
       <div style={div1}>
         <Row>
           <Col style={div3}>
-            <EventList events={this.state.events}/>
+            <EventList events={this.state.events} />
           </Col>
-        <Category />
+          <Category />
         </Row>
       </div>
-    )
+    );
   }
 }
