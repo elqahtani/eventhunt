@@ -1,3 +1,11 @@
+<div style="text-align: left;">
+  <a href="https://eventhunt.co">
+    <h1>
+      <img src="./assets/eventhunt.png" alt="Eventhunt Logo">
+    </h1>
+  </a>
+</div>
+
 # Eventhunt Design 
 
 EventHunt Design
