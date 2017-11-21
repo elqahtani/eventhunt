@@ -1,15 +1,16 @@
 import React from "react";
-import {
-  Row,
-  Container,
-  Col,
-} from "reactstrap";
+import { Row, Container, Col } from "reactstrap";
 
-import ColumnSignup from "../organisms/ColumnSignup"
-import ColumnLogin from "../organisms/ColumnLogin"
+import ColumnSignup from "../organisms/ColumnSignup";
+import ColumnLogin from "../organisms/ColumnLogin";
 import helpers from "../helpers";
 
 // STYLING_CSS ---------------------------------------------------
+const styleContainer = {
+  marginTop: "30px"
+};
+
+// React render ---------------------------------------------------
 
 export default class Welcome extends React.Component {
   componentWillMount() {
@@ -18,7 +19,7 @@ export default class Welcome extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container style={styleContainer}>
         <Row className="center" id="row-auth">
           <Col>
             <ColumnLogin />

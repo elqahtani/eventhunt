@@ -1,39 +1,39 @@
-const User = require("../users/model")
-const Event = require("./model")
+const User = require("../users/model");
+const Event = require("./model");
 
-const helpers = require("../helpers")
+const helpers = require("../helpers");
 
 module.exports = {
   destroy: (req, res, next) => {
-    console.log("DESTROYING")
+    console.log("DESTROYING");
     mongoose.connection.db.dropCollection("events", (err, result) => {
-      if (err) res.send(err)
-      else res.send("Collection events dropped")
-    })
+      if (err) res.send(err);
+      else res.send("Collection events dropped");
+    });
   },
 
   get: (req, res, next) => {
     Event.find({})
-      .sort({createdAt: -1})
+      .sort({ createdAt: -1 })
       .populate("createdBy", "-password")
       .exec((err, events) => {
-        if (err) res.send(err)
-        else res.send(events)
-      })
+        if (err) res.send(err);
+        else res.send(events);
+      });
   },
 
   getOne: (req, res, next) => {
     Event.findOne({ id: req.params.id })
       .populate("createdBy", "-password")
       .exec((err, Event) => {
-        if (err) res.send(err)
-        else res.send(Event)
-      })
+        if (err) res.send(err);
+        else res.send(Event);
+      });
   },
 
   post: (req, res, next) => {
-    const token = req.headers.authorization || req.body.token
-    const user = helpers.decodeToken(token)
+    const token = req.headers.authorization || req.body.token;
+    const user = helpers.decodeToken(token);
 
     if (user) {
       // PREPARE NEW Event
@@ -47,11 +47,11 @@ module.exports = {
         date: req.body.date,
         time: req.body.time,
         originWebsite: req.body.originWebsite
-      })
+      });
 
       // newEvent = newEvent.sort({createdAt: -1})
 
-      console.log(newEvent)
+      console.log(newEvent);
 
       // SAVE THAT NEW Event
       // user.findByIdAndUpdate(user._id (err, user) => {
@@ -61,11 +61,11 @@ module.exports = {
           : res.send({
               message: "New Event saved",
               data: newEvent
-            })
-      })
+            });
+      });
     } else {
       // NOTIFY IF USER TOKEN IS INVALID
-      res.send({ message: "User token is invalid" })
+      res.send({ message: "User token is invalid" });
     }
   }
 
@@ -90,4 +90,4 @@ module.exports = {
   //   })
   //     .catch(next)
   //   }
-  } 
+};

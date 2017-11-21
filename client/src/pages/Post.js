@@ -18,7 +18,7 @@ axios.defaults.headers.common["Authorization"] = helpers.getToken();
 
 const styleForm = {
   width: "100%",
-  height: "780px"
+  height: "920px"
 };
 
 const styleInput = {
@@ -52,8 +52,13 @@ const styleHeader = {
 
 const styleTextarea = {
   width: "100%",
+  minHeight: "140px",
   border: "none",
   borderBottom: "1px solid #CFD8DC"
+};
+
+const styleMainDiv = {
+  marginTop: "30px"
 };
 
 class Post extends React.Component {
@@ -84,7 +89,7 @@ class Post extends React.Component {
 
     const payload = {
       title: this.state.title,
-      venue: this.state.venue,
+      location: this.state.location,
       date: this.state.date,
       time: this.state.time,
       category: this.state.category,
@@ -97,7 +102,7 @@ class Post extends React.Component {
       .then(response => {
         // NOTIFY ASKER
         console.log(response.data);
-        alert(`New event posted`);
+        alert(`${this.state.title}  posted`);
         // REDIRECT TO ANSWER
         this.props.history.push("/");
       })
@@ -109,7 +114,7 @@ class Post extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={styleMainDiv}>
         <h3 style={styleHeader}>POST EVENT</h3>
         <br />
         <Form style={styleForm} onSubmit={this.handleSubmit}>
@@ -120,19 +125,19 @@ class Post extends React.Component {
                 <Input
                   style={styleInput}
                   type="text"
-                  name="eventTitle"
-                  id="eventTitle"
+                  name="title"
+                  id="title"
                   placeholder="Event Title"
                   onChange={this.handleChange}
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="eventVenue" />
+                <Label for="eventLocation" />
                 <Input
                   style={styleInput}
                   type="text"
-                  name="eventVenue"
-                  id="eventVenue"
+                  name="location"
+                  id="location"
                   placeholder="Location"
                   onChange={this.handleChange}
                 />
@@ -142,8 +147,8 @@ class Post extends React.Component {
                 <Input
                   style={styleInput}
                   type="text"
-                  name="eventDate"
-                  id="eventDate"
+                  name="date"
+                  id="date"
                   placeholder="Event Date"
                   onChange={this.handleChange}
                 />
@@ -153,8 +158,8 @@ class Post extends React.Component {
                 <Input
                   style={styleInput}
                   type="text"
-                  name="eventTime"
-                  id="eventTime"
+                  name="time"
+                  id="time"
                   placeholder="Event Time"
                   onChange={this.handleChange}
                 />
@@ -175,8 +180,8 @@ class Post extends React.Component {
                 <Input
                   style={styleInput}
                   type="text"
-                  name="eventCategory"
-                  id="eventCategory"
+                  name="category"
+                  id="category"
                   placeholder="Event Category"
                   onChange={this.handleChange}
                 />
@@ -197,8 +202,8 @@ class Post extends React.Component {
                 <textarea
                   style={styleTextarea}
                   type="text"
-                  name="EventDescription"
-                  id="EventDescription"
+                  name="description"
+                  id="description"
                   placeholder="Event Description"
                   onChange={this.handleChange}
                 />
