@@ -101,7 +101,7 @@ class EventItem extends Component {
     const event = this.state.event;
     return (
       <Card style={styleBox}>
-        <img src={Contentimg1} alt="Fest 1" style={styleImg} />
+        <img src={event.imageThumbnail} alt="Fest 1" style={styleImg} />
         <div style={styleRow}>
           <Col style={Text1}>{event.title}</Col>
           <Col style={Text2}>
