@@ -54,6 +54,7 @@ module.exports = {
       console.log(newEvent);
 
       // SAVE THAT NEW Event
+      // user.findByIdAndUpdate(user._id (err, user) => {
       newEvent.save(err => {
         err
           ? res.send(err)
