@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Col, Card } from "reactstrap";
+import { Button, Col, Card } from "reactstrap";
 
 import IconMap from "../static/mapRED.png";
 import IconDate from "../static/calendar.png";
@@ -13,11 +13,19 @@ const styleIconMap = {
   marginRight: "10px"
 };
 
+const styleButton = {
+  fontFamily: "lato",
+  marginRight: "20px",
+  color: "#bdbdbd",
+  backgroundColor: "#f5f5f5",
+  borderRadius: "40px",
+  padding: "2px 10px 2px 10px"
+};
 const styleBox = {
   backgroundColor: "white",
   padding: "0",
   display: "inline-block",
-  height: "280px",
+  height: "240px",
   width: "780px"
 };
 
@@ -37,10 +45,18 @@ const styleCol = {
   maxWidth: "40px"
 };
 
+const styleBook = {
+  float: "left",
+  marginTop: "20px",
+  maxWidth: "40px",
+  position: "absolute",
+  right: "20px"
+};
+
 const styleImg = {
   float: "left",
   margin: "0",
-  height: "280px",
+  height: "100%",
   width: "250px"
 };
 
@@ -61,7 +77,8 @@ const Text2 = {
 const Text3 = {
   fontWeight: "bold",
   fontSize: "13px",
-  color: "black"
+  color: "black",
+  marginRight: "7px"
 };
 
 const Text4 = {
@@ -89,7 +106,7 @@ class EventItem extends Component {
           <Col style={Text1}>{event.title}</Col>
           <Col style={Text2}>
             Posted by <span style={Text3}> {event.createdBy.name}</span>
-            {/*via <span style={Text3}>Eventbrite</span>*/}
+            via <span style={Text3}>{event.originWebsite}</span>
           </Col>
           <Col style={Text4}>
             <img src={IconMap} alt="map" style={styleIconMap} />
@@ -100,11 +117,11 @@ class EventItem extends Component {
             {event.date}
           </Col>
           <Col>
-            {/*<Button style={styleButton}>Techtalk</Button>
-                <Button style={styleButton}>Workshop</Button>*/}
+            <Button style={styleButton}>Techtalk</Button>
+            <Button style={styleButton}>Workshop</Button>
           </Col>
         </div>
-        <Col style={styleCol}>
+        <Col style={styleBook}>
           <img src={IconBookmark} alt="bookmark" style={styleIconMap} />
         </Col>
       </Card>

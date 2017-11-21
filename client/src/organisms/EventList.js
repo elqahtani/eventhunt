@@ -8,6 +8,17 @@ const div1 = {
   padding: "0"
 };
 
+const styleToday = {
+  margin: "0",
+  padding: "0",
+  marginBottom: "20px"
+};
+
+const styleRowToday = {
+  margin: "0",
+  padding: "0"
+};
+
 const div3 = {
   width: "80%",
   float: "right"
@@ -15,7 +26,7 @@ const div3 = {
 
 const Text5 = {
   float: "left",
-  color: "black",
+  color: "grey",
   fontWeight: "bold",
   marginRight: "10px",
   fontSize: "13px"
@@ -24,7 +35,7 @@ const Text5 = {
 const Text6 = {
   float: "left",
   marginRight: "10px",
-  color: "grey",
+  color: "#bdbdbd",
   fontSize: "13px"
 };
 
@@ -35,8 +46,8 @@ class Eventlist extends Component {
     return (
       <div>
         <div style={div1}>
-          <Row>
-            <Col sm={{ size: "auto", offset: 1 }}>
+          <Row style={styleRowToday}>
+            <Col style={styleToday}>
               <p style={Text5}>We found match events</p>
               <p style={Text6}>Seminar & traning</p>
               <p style={Text6}>Yogyakarta</p>
@@ -44,9 +55,7 @@ class Eventlist extends Component {
           </Row>
           <Row>
             <Col>
-              <p style={div1}>
-                TODAY () <span style={div3} />
-              </p>
+              <p style={styleToday}>TODAY </p>
             </Col>
           </Row>
         </div>

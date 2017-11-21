@@ -5,6 +5,8 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import helpers from "../helpers";
+import { withRouter } from "react-router-dom";
 
 const styleText1 = {
   display: "inline",
@@ -12,11 +14,11 @@ const styleText1 = {
   fontFamily: "lato",
   fontWeight: "bold",
   fontSize: "13px",
-  color: "#ffffff",
+  color: "#ffffff"
 };
 
 const styleText2 = {
-  background:"transparent",
+  background: "transparent",
   fontFamily: "lato",
   marginTop: "23px",
   marginRight: "30px",
@@ -24,12 +26,11 @@ const styleText2 = {
   fontWeight: "bold",
   fontSize: "13px",
   color: "#ffffff",
-  padding:"0",
-  border:"0",
-
+  padding: "0",
+  border: "0"
 };
 
-export default class Dropdown1 extends React.Component {
+class Dropdown1 extends React.Component {
   constructor(props) {
     super(props);
 
@@ -45,18 +46,31 @@ export default class Dropdown1 extends React.Component {
     });
   }
 
+  handleClick = event => {
+    helpers.deleteToken();
+    this.props.history.push("/welcome");
+    this.forceUpdate();
+  };
+
   render() {
     return (
-      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} style={styleText1}>
-        <DropdownToggle caret style={styleText2}>AYU DWIYASTRI</DropdownToggle>
+      <Dropdown
+        isOpen={this.state.dropdownOpen}
+        toggle={this.toggle}
+        style={styleText1}
+      >
+        <DropdownToggle caret style={styleText2}>
+          AYU DWIYASTRI
+        </DropdownToggle>
         <DropdownMenu>
           <DropdownItem>change photo</DropdownItem>
           <DropdownItem>Update bio</DropdownItem>
           <DropdownItem>Settings</DropdownItem>
           <DropdownItem divider />
-          <DropdownItem>Logout</DropdownItem>
+          <DropdownItem onClick={this.handleClick}>Logout</DropdownItem>
         </DropdownMenu>
       </Dropdown>
     );
   }
 }
+export default withRouter(Dropdown1);
