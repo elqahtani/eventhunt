@@ -19,6 +19,15 @@ const EventSchema = mongoose.Schema({
   },
   image: {
   	type: Schema.Types.Mixed
+
+  },
+  imageThumbnail: {
+    type: String,
+    default: "https://raw.githubusercontent.com/elqahtani/elqahtani.github.io/master/img/thumbnail.jpg"
+  },
+  imageDescription: {
+    type: String,
+    default: "https://raw.githubusercontent.com/elqahtani/elqahtani.github.io/master/img/evendetails.jpg"
   },
   category: {
   	type: String,
