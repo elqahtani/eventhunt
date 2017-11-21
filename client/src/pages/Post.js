@@ -102,7 +102,7 @@ class Post extends React.Component {
       .then(response => {
         // NOTIFY ASKER
         console.log(response.data);
-        alert(`${this.props.event}`);
+        alert(`${this.state.title}  posted`);
         // REDIRECT TO ANSWER
         this.props.history.push("/");
       })
