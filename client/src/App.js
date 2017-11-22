@@ -17,20 +17,44 @@ import UpdateProfile from "./pages/UpdateProfile";
 import helpers from "./helpers";
 
 const user = helpers.decodeToken();
+// lllllllllllllllllllllllllllll
 
-const App = () => (
-  <Router>
-    <Layout>
-      <Route path="/welcome" component={Welcome} />
-      <Route exact path="/" component={Home} />
-      <Route path="/popular" component={Home} />
-      <Route path="/FAQ" component={FAQ} />
-      <Route path="/post/:id" component={Post} />
-      <Route path="/profile/:id" component={Profile} />
-      <Route path="/event" component={EventPage} />
-      <Route path="/bio" component={UpdateProfile} />
-    </Layout>
-  </Router>
-);
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <Layout myFunc={this.siblingAFunc.bind(this)}>
+          <Route path="/welcome" component={Welcome} />
+          <Route exact path="/" component={Home} />
+          <Route path="/popular" component={Home} />
+          <Route path="/FAQ" component={FAQ} />
+          <Route path="/post/:id" component={Post} />
+          <Route path="/profile/:id" component={Profile} />
+          <Route path="/event/:id" component={EventPage} />
+          <Route path="/bio" component={UpdateProfile} />
+        </Layout>
+      </Router>
+    );
+  }
+  // Define 'siblingAFunc' and 'siblingBFunc' here
+  siblingAFunc() {
+    this.setState(this.state);
+  }
+}
+
+// const App = () => (
+//   <Router>
+//     <Layout myFunc={this.siblingAFunc.bind(this)}>
+//       <Route path="/welcome" component={Welcome} />
+//       <Route exact path="/" component={Home} />
+//       <Route path="/popular" component={Home} />
+//       <Route path="/FAQ" component={FAQ} />
+//       <Route path="/post/:id" component={Post} />
+//       <Route path="/profile/:id" component={Profile} />
+//       <Route path="/event/:id" component={EventPage} />
+//       <Route path="/bio" component={UpdateProfile} />
+//     </Layout>
+//   </Router>
+// );
 
 export default App;

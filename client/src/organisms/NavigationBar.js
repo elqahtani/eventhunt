@@ -1,22 +1,18 @@
 import React from "react";
+import { Row, Col, Container } from "reactstrap";
 import { NavLink } from "react-router-dom";
-import {
-  Row,
-  Col,
-  Container,
-} from "reactstrap";
-
 import SignIn from "../atoms/SignIn";
+import PostButton from "../atoms/PostButton";
 import Dropdown from "../atoms/Dropdown";
 import Banner from "../atoms/Banner";
 import BannerProfile from "../atoms/BannerProfile";
 import BackgroundImg from "../static/bgheader.png";
-import helpers from "../helpers"
+import helpers from "../helpers";
 // import logo from "../static/logo.png";
 
 // -----------------------------------------------------------------------------
 
-const userToken = helpers.decodeToken()
+const userToken = helpers.decodeToken();
 
 const USER = {
   _id: 0,
@@ -51,6 +47,12 @@ const styleText2A = {
   padding: "0",
   fontSize: "13px",
   color: "#ffffff"
+};
+
+const styleText3 = {
+  margin: "0 auto",
+  float: "right",
+  width: "100%"
 };
 
 const styleText5 = {
@@ -98,20 +100,17 @@ const Home = () => (
         </Col>
 
         <Col xs={4} className="navbar-inverse">
-          <div style={styleText6}>
-          <Row id="row-navigation">
-            {!userToken && (<SignIn />)}
-            {userToken && (<Dropdown />)}
-          </Row>
-          </div>
-          <NavLink to={`/post/${USER._id}`} style={styleText5}>
-            POST EVENT
-          </NavLink>
+          {!userToken && <SignIn />}
+          {userToken && (
+            <div style={styleText3}>
+              <Dropdown />
+              <PostButton />
+            </div>
+          )}
         </Col>
       </Row>
-        <Banner />
-      <Row >
-      </Row>
+      <Banner />
+      <Row />
     </Container>
   </div>
 );

@@ -1,5 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
+import axios from "axios";
+import IconMap from "../static/mapRED.png";
+import IconDate from "../static/calendar.png";
+import IconBookmark from "../static/bookmark.png";
+
 import {
+  Button,
   Row,
   Container,
   Col,
@@ -8,13 +14,90 @@ import {
   CardTitle,
   CardSubtitle,
   CardText,
-  CardImg,
+  CardImg
 } from "reactstrap";
-
-import Category from "../atoms/Category";
 
 // STYLING_CSS ---------------------------------------------------
 
+// ----------------CSS styling--------------------------------------------------
+const styleIconMap = {
+  width: "24px",
+  marginRight: "10px"
+};
+
+const styleButton = {
+  fontFamily: "lato",
+  marginRight: "20px",
+  color: "#bdbdbd",
+  backgroundColor: "#f5f5f5",
+  borderRadius: "40px",
+  padding: "2px 10px 2px 10px"
+};
+const styleBox = {
+  backgroundColor: "white",
+  padding: "0",
+  display: "inline-block",
+  height: "260px",
+  width: "780px"
+};
+
+const styleRow = {
+  float: "left",
+  fontFamily: "lato",
+  padding: "0",
+  marginLeft: "20px",
+  marginTop: "20px",
+  maxWidth: "440px"
+};
+
+const styleCol = {
+  float: "left",
+  fontFamily: "lato",
+  marginLeft: "0",
+  marginTop: "20px",
+  maxWidth: "40px"
+};
+
+const styleBook = {
+  float: "right",
+  marginTop: "420px",
+  maxWidth: "40px",
+  position: "absolute",
+  top: "20px",
+  right: "20px"
+};
+
+const Text1 = {
+  float: "left",
+  fontSize: "16px",
+  marginBottom: "30px"
+};
+
+const Text2 = {
+  float: "left",
+  marginBottom: "20px",
+  fontWeight: "normal",
+  fontSize: "13px",
+  color: "grey"
+};
+
+const Text3 = {
+  fontWeight: "bold",
+  fontSize: "13px",
+  color: "black",
+  marginRight: "7px"
+};
+
+const Text4 = {
+  float: "left",
+  color: "grey",
+  fontSize: "13px",
+  marginBottom: "10px"
+};
+
+const styleContainer = {
+  marginTop: "30px"
+};
 const styleText = {
   fontFamily: "lato",
   width: "80%",
@@ -22,51 +105,76 @@ const styleText = {
   marginRight: "100px"
 };
 
-// COLUMN_SINGLEEVENT
-
-const ColumnEvent = () => {
-  return (
-    <Card style={styleText}>
-    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-      <CardBody>
-
-        <CardTitle>Tournament Golf 2018 for Celebrating Pancasila Day </CardTitle>
-        <CardSubtitle>Fun Game & Sport </CardSubtitle>
-        <br />
-        <CardText>
-          In honor to celebrating Pancasila’s Day 2018, Bizcom Indonesia proudly
-          present the Golf Tournament. This event is held in a form of exclusive
-          networking activity. The vision of the event is the commemorating the
-          Pancasila as Indonesia, most honored values and symbol. Soekarno said,
-          ‘Bangsa yang besar adalah bangsa yang tidak pernah meninggalkan sejarah’
-          reflected in our vision to be held this event.
-        </CardText>
-        <br />
-        <CardSubtitle> DATE AND TIME  </CardSubtitle>
-        <CardText> Thu, May 31, 2018
-        <br />
-        5:00 AM – 3:00 PM WIB </CardText>
-
-        <CardSubtitle> Location</CardSubtitle>
-        <CardText> Senayan
-        Kebayoran Baru, Jakarta </CardText>
-      </CardBody>
-    </Card>
-  );
-}
-
+const styleImg = {
+  margin: "0"
+};
 // SINGLE
 
-const Single = () => (
-  <Container>
-    <Row className="center" id="row-auth">
-      <Col>
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+// Coba ---------------------------------------------------
+export default class EventPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      event: {}
+    };
+  }
 
-        <ColumnEvent />
-      </Col>
-      <Category />
-    </Row>
-  </Container>
-);
+  componentWillMount() {
+    const id = Number(this.props.match.params.id);
 
-export default Single;
+    axios
+      .get(`/api/events/${id}`)
+      .then(response => {
+        this.setState({
+          event: response.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        alert(err);
+      });
+  }
+
+  render() {
+    const event = this.state.event;
+    console.log(event);
+    return (
+      <Container style={styleContainer}>
+        <Card style={styleText}>
+          <img
+            src={event.imageDescription}
+            alt="Card image cap"
+            style={styleImg}
+          />
+          <CardBody>
+            <CardTitle>{event.title}</CardTitle>
+            <br />
+            <Col style={styleBook}>
+              <img src={IconBookmark} alt="bookmark" style={styleIconMap} />
+            </Col>
+            <CardSubtitle> DATE AND TIME : </CardSubtitle>
+            <br />
+            <CardText>
+              <Col style={Text4}>
+                <img src={IconMap} alt="map" style={styleIconMap} />
+                {event.location}
+              </Col>
+              <Col style={Text4}>
+                <img src={IconDate} alt="date" style={styleIconMap} />
+                {event.date}
+              </Col>
+              <Col>
+                <Button style={styleButton}>Techtalk</Button>
+                <Button style={styleButton}>Workshop</Button>
+              </Col>
+            </CardText>
+
+            <CardText>{event.description}</CardText>
+            <br />
+          </CardBody>
+        </Card>
+      </Container>
+    );
+  }
+}
