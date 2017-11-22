@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
 import IconMap from "../static/mapRED.png";
 import IconDate from "../static/calendar.png";
@@ -6,7 +6,6 @@ import IconBookmark from "../static/bookmark.png";
 
 import {
   Button,
-  Row,
   Container,
   Col,
   Card,

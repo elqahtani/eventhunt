@@ -9,7 +9,7 @@ import {
   CardBody,
   CardTitle
 } from "reactstrap";
-import { Link } from "react-router-dom";
+
 import IconMap from "../static/mapRED.png";
 import IconDate from "../static/calendar.png";
 import IconBookmark from "../static/bookmark.png";
@@ -47,14 +47,6 @@ const styleRow = {
   maxWidth: "440px"
 };
 
-const styleCol = {
-  float: "left",
-  fontFamily: "lato",
-  marginLeft: "0",
-  marginTop: "20px",
-  maxWidth: "40px"
-};
-
 const styleBook = {
   float: "right",
   marginTop: "8px",
@@ -69,12 +61,6 @@ const styleImg = {
   margin: "0",
   height: "100%",
   width: "250px"
-};
-
-const Text1 = {
-  float: "left",
-  fontSize: "16px",
-  marginBottom: "30px"
 };
 
 const Text2 = {
