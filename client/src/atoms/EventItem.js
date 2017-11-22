@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 import IconMap from "../static/mapRED.png";
 import IconDate from "../static/calendar.png";
 import IconBookmark from "../static/bookmark.png";
-import Contentimg1 from "../static/Fest.jpeg";
 
 import LinkToEvent from "../atoms/LinkToEvent";
 
@@ -121,7 +120,6 @@ class EventItem extends Component {
             <CardTitle>
               <LinkToEvent event={event} />
             </CardTitle>
-
             <CardText>{event.description}</CardText>
             <CardText>
               <Col style={Text2}>
@@ -149,36 +147,6 @@ class EventItem extends Component {
           </Col>
         </Card>
       </div>
-      // <Card style={styleBox}>
-      //   <img src={event.imageThumbnail} alt="Fest 1" style={styleImg} />
-      //   <CardBody>
-      //     <div style={styleRow}>
-      //       <Col style={Text1}>
-      //         <LinkToEvent event={event} />
-      //         <Link to="/">TEST TO HOME</Link>
-      //       </Col>
-      //       <Col style={Text2}>
-      //         Posted by <span style={Text3}> {event.createdBy.name}</span>
-      //         via <span style={Text3}>{event.originWebsite}</span>
-      //       </Col>
-      //       <Col style={Text4}>
-      //         <img src={IconMap} alt="map" style={styleIconMap} />
-      //         {event.location}
-      //       </Col>
-      //       <Col style={Text4}>
-      //         <img src={IconDate} alt="date" style={styleIconMap} />
-      //         {event.date}
-      //       </Col>
-      //       <Col>
-      //         <Button style={styleButton}>Techtalk</Button>
-      //         <Button style={styleButton}>Workshop</Button>
-      //       </Col>
-      //     </div>
-      //     <Col style={styleBook}>
-      //       <img src={IconBookmark} alt="bookmark" style={styleIconMap} />
-      //     </Col>
-      //   </CardBody>
-      // </Card>
     );
   }
 }
