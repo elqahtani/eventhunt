@@ -1,16 +1,24 @@
-import React from "react"
-import { withRouter } from "react-router-dom"
-import { Form, FormGroup, Label, Input,  Button, Card, CardBody } from "reactstrap"
-import axios from "axios"
+import React from "react";
+import { withRouter } from "react-router-dom";
+import {
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Button,
+  Card,
+  CardBody
+} from "reactstrap";
+import axios from "axios";
 
-import Link from "../atoms/Link"
+import Link from "../atoms/Link";
 
-import helpers from "../helpers"
+import helpers from "../helpers";
 
 const initialState = {
   loginEmail: "",
   loginPassword: ""
-}
+};
 
 const styleButton = {
   width: "90%",
@@ -46,51 +54,51 @@ const styleHeader = {
 
 class ColumnLogin extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = initialState
+    super(props);
+    this.state = initialState;
   }
 
   // HANDLE CHANGE IN LOGIN FORM
 
   handleChange = event => {
-    const name = event.target.name
-    const value = event.target.value
-
+    const name = event.target.name;
+    const value = event.target.value;
+    this.siblingAFunc;
     this.setState({
       [name]: value
-    })
-  }
+    });
+  };
 
   // HANDLE SUBMIT LOGIN
 
   handleSubmit = event => {
-    event.preventDefault()
+    event.preventDefault();
 
     const payload = {
       email: this.state.loginEmail,
       password: this.state.loginPassword
-    }
+    };
 
     axios
       .post(`${process.env.REACT_APP_API_URL}/auth/login`, payload)
       .then(response => {
         if (response.data.token) {
-          helpers.setToken(response.data.token)
-          this.setState(initialState)
+          helpers.setToken(response.data.token);
+          this.setState(initialState);
           // NOTIFY VISITOR
           // console.log(response.data)
-          alert(`Login success!`)
+          alert(`Login success!`);
           // REDIRECT TO HOME
-          this.props.history.push("/")
+          this.props.history.push("/");
         } else {
-          throw new Error()
+          throw new Error();
         }
       })
       .catch(error => {
-        alert(`${error}`)
-        console.log(error)
-      })
-  }
+        alert(`${error}`);
+        console.log(error);
+      });
+  };
 
   // RENDER LOGIN FORM
 
@@ -99,46 +107,50 @@ class ColumnLogin extends React.Component {
       <Card style={styleText}>
         <CardBody>
           <h3 style={styleHeader}>LOGIN</h3>
-        <Form onSubmit={this.handleSubmit} style={styleForm}>
-          <br />
-          <FormGroup>
-            <Label for="loginEmail" />
-            <Input
-              style={styleInput}
-              type="email"
-              name="loginEmail"
-              id="loginEmail"
-              placeholder="Email"
-              value={this.state.loginEmail}
-              onChange={this.handleChange}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="loginPassword" />
-            <Input
-              style={styleInput}
-              type="password"
-              name="loginPassword"
-              id="loginPassword"
-              placeholder="Password"
-              value={this.state.loginPassword}
-              onChange={this.handleChange}
-            />
-          </FormGroup>
-          <br />
-          <FormGroup>
-            <Link to="/forgot">Forgot password?</Link>
-          </FormGroup>
-          <br />
-          <Button style={styleButton} color="success" type="submit" value="Login">
-            LOGIN
-          </Button>
-
-        </Form>
+          <Form onSubmit={this.handleSubmit} style={styleForm}>
+            <br />
+            <FormGroup>
+              <Label for="loginEmail" />
+              <Input
+                style={styleInput}
+                type="email"
+                name="loginEmail"
+                id="loginEmail"
+                placeholder="Email"
+                value={this.state.loginEmail}
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="loginPassword" />
+              <Input
+                style={styleInput}
+                type="password"
+                name="loginPassword"
+                id="loginPassword"
+                placeholder="Password"
+                value={this.state.loginPassword}
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+            <br />
+            <FormGroup>
+              <Link to="/forgot">Forgot password?</Link>
+            </FormGroup>
+            <br />
+            <Button
+              style={styleButton}
+              color="success"
+              type="submit"
+              value="Login"
+            >
+              LOGIN
+            </Button>
+          </Form>
         </CardBody>
       </Card>
-    )
+    );
   }
 }
 
-export default withRouter(ColumnLogin)
+export default withRouter(ColumnLogin);

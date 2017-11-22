@@ -49,23 +49,6 @@ export default class Home extends React.Component {
       });
   }
 
-  // ------------Method dibawah copy dari forum (Haidar)--------------------------
-  // ------------harus nya hasil nya sama aja dengan method di atas---------------
-
-  // const id = Number(this.props.id)
-  // axios
-  //   .get(`${process.env.REACT_APP_API_URL}/api/users/${id}`)
-  //   .then(response => {
-  //     const event = response.data
-  //     console.log(event)
-  //     this.setState({
-  //       event: event
-  //     })
-  //   })
-  //   .catch(error => {
-  //     console.log(error)
-  //   })
-
   render() {
     // const Home = this.state.event
     return (
