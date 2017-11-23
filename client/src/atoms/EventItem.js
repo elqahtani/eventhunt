@@ -9,12 +9,13 @@ import {
   CardBody,
   CardTitle
 } from "reactstrap";
-import { Link } from "react-router-dom";
+
 import IconMap from "../static/mapRED.png";
 import IconDate from "../static/calendar.png";
 import IconBookmark from "../static/bookmark.png";
 
 import LinkToEvent from "../atoms/LinkToEvent";
+import LinkToEventDiv from "../atoms/LinkToEventDiv";
 
 // ----------------CSS styling--------------------------------------------------
 const styleIconMap = {
@@ -47,14 +48,6 @@ const styleRow = {
   maxWidth: "440px"
 };
 
-const styleCol = {
-  float: "left",
-  fontFamily: "lato",
-  marginLeft: "0",
-  marginTop: "20px",
-  maxWidth: "40px"
-};
-
 const styleBook = {
   float: "right",
   marginTop: "8px",
@@ -69,12 +62,6 @@ const styleImg = {
   margin: "0",
   height: "100%",
   width: "250px"
-};
-
-const Text1 = {
-  float: "left",
-  fontSize: "16px",
-  marginBottom: "30px"
 };
 
 const Text2 = {
@@ -120,7 +107,6 @@ class EventItem extends Component {
             <CardTitle>
               <LinkToEvent event={event} />
             </CardTitle>
-            <CardText>{event.description}</CardText>
             <CardText>
               <Col style={Text2}>
                 Posted by <span style={Text3}> {event.createdBy.name}</span>
