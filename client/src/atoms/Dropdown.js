@@ -62,7 +62,7 @@ class Dropdown1 extends React.Component {
           Username
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem>change photo</DropdownItem>
+          <DropdownItem>Change photo</DropdownItem>
           <DropdownItem>Update bio</DropdownItem>
           <DropdownItem>Settings</DropdownItem>
           <DropdownItem divider />

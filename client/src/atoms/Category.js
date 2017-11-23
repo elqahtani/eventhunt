@@ -27,7 +27,12 @@ const styleCol = {
 
 const IconCategory1 = {
   backgroundColor: "#C8E6C9",
-  padding: "5px",
+  padding: "7px",
+
+  paddingBottom: "15px",
+  paddingRight: "10",
+  paddingTop: "100",
+  paddingLeft: "20",
   color: "#ffffff",
   fontFamily: "lato",
   borderRadius: "10px",
@@ -36,7 +41,7 @@ const IconCategory1 = {
 
 const IconCategory2 = {
   backgroundColor: "#FFCDD2",
-  padding: "5px",
+  padding: "11px",
   color: "#ffffff",
   fontFamily: "lato",
   borderRadius: "10px",
@@ -45,7 +50,9 @@ const IconCategory2 = {
 
 const IconCategory3 = {
   backgroundColor: "#E1BEE7",
-  padding: "5px",
+  padding: "9px",
+  paddingTop: "100",
+  paddingBottom: "100",
   color: "#ffffff",
   fontFamily: "lato",
   borderRadius: "10px",
@@ -54,7 +61,7 @@ const IconCategory3 = {
 
 const IconCategory4 = {
   backgroundColor: "#CFD8DC",
-  padding: "5px",
+  padding: "11px",
   color: "#ffffff",
   fontFamily: "lato",
   borderRadius: "10px",
@@ -63,7 +70,7 @@ const IconCategory4 = {
 
 const IconCategory5 = {
   backgroundColor: "#BCAAA4",
-  padding: "5px",
+  padding: "10px",
   color: "#ffffff",
   fontFamily: "lato",
   borderRadius: "10px",
@@ -72,7 +79,7 @@ const IconCategory5 = {
 
 const IconCategory6 = {
   backgroundColor: "#B3E5FC",
-  padding: "5px",
+  padding: "10px",
   color: "#ffffff",
   fontFamily: "lato",
   borderRadius: "10px",
@@ -81,7 +88,7 @@ const IconCategory6 = {
 
 const IconCategory7 = {
   backgroundColor: "#84FFFF",
-  padding: "5px",
+  padding: "10px",
   color: "#ffffff",
   fontFamily: "lato",
   borderRadius: "10px",
@@ -90,7 +97,7 @@ const IconCategory7 = {
 
 const IconCategory8 = {
   backgroundColor: "#EA80FC",
-  padding: "5px",
+  padding: "10px",
   color: "#ffffff",
   fontFamily: "lato",
   borderRadius: "10px",
@@ -99,7 +106,7 @@ const IconCategory8 = {
 
 const IconCategory9 = {
   backgroundColor: "#CFD8DC",
-  padding: "5px",
+  padding: "10px",
   color: "#ffffff",
   fontFamily: "lato",
   borderRadius: "10px",
@@ -108,7 +115,7 @@ const IconCategory9 = {
 
 const IconCategory10 = {
   backgroundColor: "#E1BEE7",
-  padding: "5px",
+  padding: "10px",
   color: "#ffffff",
   fontFamily: "lato",
   borderRadius: "10px",
