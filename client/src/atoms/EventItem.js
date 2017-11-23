@@ -15,6 +15,7 @@ import IconDate from "../static/calendar.png";
 import IconBookmark from "../static/bookmark.png";
 
 import LinkToEvent from "../atoms/LinkToEvent";
+import LinkToEventDiv from "../atoms/LinkToEventDiv";
 
 // ----------------CSS styling--------------------------------------------------
 const styleIconMap = {
@@ -106,7 +107,6 @@ class EventItem extends Component {
             <CardTitle>
               <LinkToEvent event={event} />
             </CardTitle>
-            <CardText>{event.description}</CardText>
             <CardText>
               <Col style={Text2}>
                 Posted by <span style={Text3}> {event.createdBy.name}</span>

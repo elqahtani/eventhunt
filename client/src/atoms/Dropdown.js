@@ -49,7 +49,6 @@ class Dropdown1 extends React.Component {
   handleClick = event => {
     helpers.deleteToken();
     this.props.history.push("/welcome");
-    this.forceUpdate();
   };
 
   render() {
@@ -60,7 +59,7 @@ class Dropdown1 extends React.Component {
         style={styleText1}
       >
         <DropdownToggle caret style={styleText2}>
-          AYU DWIYASTRI
+          Username
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem>change photo</DropdownItem>
