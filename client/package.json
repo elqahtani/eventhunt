@@ -10,7 +10,7 @@
     "react-app-env": "1.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
-    "reactstrap": "next"
+    "reactstrap": "6.1.0"
   },
   "scripts": {
     "dev": "react-app-env start",
